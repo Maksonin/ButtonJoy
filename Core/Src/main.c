@@ -154,8 +154,8 @@ int main(void)
 		// сохраняем значение осей
 		USB_TX_Buffer[0] = (uint8_t)(adcData[0]>>4)-128;  // X
 		USB_TX_Buffer[1] = (uint8_t)(adcData[1]>>4)-128;  // Y
-		USB_TX_Buffer[2] = (uint8_t)(adcData[2]>>4)-128;  // Z  (не работающий канал)
-		USB_TX_Buffer[3] = (uint8_t)(adcData[3]>>4)-128;  // rZ (не работающий канал)
+		USB_TX_Buffer[2] = (uint8_t)(adcData[0]>>4)-128;  // Z  (не работающий канал)
+		USB_TX_Buffer[3] = (uint8_t)(adcData[1]>>4)-128;  // rZ (не работающий канал)
 
 		UartPrintString(&huart1, "ACP1: ", 6, 0);
 		UartPrintInt(&huart1, (int32_t)adcData[0], 1);
@@ -165,8 +165,17 @@ int main(void)
 
 	dmaEnd = 0; // сброс флага dma
 
-	USB_TX_Buffer[4] = HAL_GPIO_ReadPin(B1_GPIO_Port, B1_Pin) | (HAL_GPIO_ReadPin(JoyBtn0_GPIO_Port, JoyBtn0_Pin) << 1); // кнопки ряда 1
-	USB_TX_Buffer[5] = HAL_GPIO_ReadPin(JoyBtn0_GPIO_Port, JoyBtn0_Pin); // кнопки ряда 2
+	// кнопки ряда 1
+	USB_TX_Buffer[4] =
+			HAL_GPIO_ReadPin(B1_GPIO_Port, B1_Pin) |
+			(HAL_GPIO_ReadPin(JoyBtn3_GPIO_Port, JoyBtn3_Pin) << 1) |
+			(HAL_GPIO_ReadPin(JoyBtn4_GPIO_Port, JoyBtn4_Pin) << 2) |
+			(HAL_GPIO_ReadPin(JoyBtn5_GPIO_Port, JoyBtn5_Pin) << 3) |
+			(HAL_GPIO_ReadPin(JoyBtn6_GPIO_Port, JoyBtn6_Pin) << 4) |
+			(HAL_GPIO_ReadPin(JoyBtn7_GPIO_Port, JoyBtn7_Pin) << 5);
+
+	// кнопки ряда 2
+	USB_TX_Buffer[5] = HAL_GPIO_ReadPin(JoyBtn2_GPIO_Port, JoyBtn2_Pin);
 
 	USBD_CUSTOM_HID_SendReport(&hUsbDeviceFS, USB_TX_Buffer, 6); // отправка USB пакета
   }
@@ -398,14 +407,18 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Alternate = GPIO_AF3_TSC;
   HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
 
-  /*Configure GPIO pins : JoyBtn0_Pin JoyBtn1_Pin JoyBtn2_Pin JoyTUMB2_Pin
-                           JoyTUMB3_Pin JoyDoubleTUMB0_1_Pin JoyDoubleTUMB0_2_Pin JoyDoubleTUMB1_1_Pin
-                           JoyDoubleTUMB1_2_Pin JoyBtn3_Pin JoyBtn4_Pin JoyBtn5_Pin
-                           JoyBtn6_Pin JoyBtn7_Pin JoyTUMB0_Pin JoyTUMB1_Pin */
-  GPIO_InitStruct.Pin = JoyBtn0_Pin|JoyBtn1_Pin|JoyBtn2_Pin|JoyTUMB2_Pin
-                          |JoyTUMB3_Pin|JoyDoubleTUMB0_1_Pin|JoyDoubleTUMB0_2_Pin|JoyDoubleTUMB1_1_Pin
-                          |JoyDoubleTUMB1_2_Pin|JoyBtn3_Pin|JoyBtn4_Pin|JoyBtn5_Pin
-                          |JoyBtn6_Pin|JoyBtn7_Pin|JoyTUMB0_Pin|JoyTUMB1_Pin;
+  /*Configure GPIO pins : JoyBtn0_Pin JoyBtn1_Pin JoyBtn2_Pin JoyBtn3_Pin
+                           JoyBtn4_Pin JoyBtn5_Pin JoyBtn6_Pin JoyBtn7_Pin */
+  GPIO_InitStruct.Pin = JoyBtn0_Pin|JoyBtn1_Pin|JoyBtn2_Pin|JoyBtn3_Pin
+                          |JoyBtn4_Pin|JoyBtn5_Pin|JoyBtn6_Pin|JoyBtn7_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
+  GPIO_InitStruct.Pull = GPIO_PULLDOWN;
+  HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
+
+  /*Configure GPIO pins : JoyTUMB2_Pin JoyTUMB3_Pin JoyDoubleTUMB0_1_Pin JoyDoubleTUMB0_2_Pin
+                           JoyDoubleTUMB1_1_Pin JoyDoubleTUMB1_2_Pin JoyTUMB0_Pin JoyTUMB1_Pin */
+  GPIO_InitStruct.Pin = JoyTUMB2_Pin|JoyTUMB3_Pin|JoyDoubleTUMB0_1_Pin|JoyDoubleTUMB0_2_Pin
+                          |JoyDoubleTUMB1_1_Pin|JoyDoubleTUMB1_2_Pin|JoyTUMB0_Pin|JoyTUMB1_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
   GPIO_InitStruct.Pull = GPIO_PULLUP;
   HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
