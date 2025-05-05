@@ -1,0 +1,7 @@
+H:/MK/Cube/myLibs/stm32f0perif/Src/cdcUSBDDebug.c:13:9:CDCPrint	2
+H:/MK/Cube/myLibs/stm32f0perif/Src/cdcUSBDDebug.c:26:6:CDCPrintInt	6
+H:/MK/Cube/myLibs/stm32f0perif/Src/cdcUSBDDebug.c:49:6:CDCPrintIntBin	3
+H:/MK/Cube/myLibs/stm32f0perif/Src/cdcUSBDDebug.c:66:6:CDCPrintChar	2
+H:/MK/Cube/myLibs/stm32f0perif/Src/cdcUSBDDebug.c:79:6:CDCPrintString	2
+H:/MK/Cube/myLibs/stm32f0perif/Src/cdcUSBDDebug.c:89:6:CDCPrintFloat	1
+H:/MK/Cube/myLibs/stm32f0perif/Src/cdcUSBDDebug.c:100:6:CDCPrintCoding	2

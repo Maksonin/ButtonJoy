@@ -1,0 +1,5 @@
+H:/MK/Cube/myLibs/stm32f0perif/Src/uart.c:6:6:UartPrint	2
+H:/MK/Cube/myLibs/stm32f0perif/Src/uart.c:14:6:UartPrintInt	6
+H:/MK/Cube/myLibs/stm32f0perif/Src/uart.c:37:6:UartPrintString	2
+H:/MK/Cube/myLibs/stm32f0perif/Src/uart.c:47:6:UartPrintIntBin	3
+H:/MK/Cube/myLibs/stm32f0perif/Src/uart.c:64:6:UartPrintFloat	1
