@@ -29,5 +29,6 @@ Middlewares/ST/STM32_USB_Device_Library/Class/CustomHID/Src \
 Middlewares/ST/STM32_USB_Device_Library/Core/Src \
 USB_DEVICE/App \
 USB_DEVICE/Target \
+myLibs/SSD1322_OLED_library/SSD1322_OLED_lib \
 stm32f0perif/Src \
 

@@ -1,0 +1,8 @@
+myLibs/SSD1322_OLED_library/SSD1322_OLED_lib/SSD1322_API.o: \
+ H:/MK/Cube/myLibs/SSD1322_OLED_library/SSD1322_OLED_lib/SSD1322_API.c \
+ H:/MK/Cube/myLibs/SSD1322_OLED_library/SSD1322_OLED_lib/../SSD1322_OLED_lib/SSD1322_HW_Driver.h \
+ H:/MK/Cube/myLibs/SSD1322_OLED_library/SSD1322_OLED_lib/../SSD1322_OLED_lib/SSD1322_API.h \
+ H:/MK/Cube/myLibs/SSD1322_OLED_library/SSD1322_OLED_lib/../SSD1322_OLED_lib/../SSD1322_OLED_lib/SSD1322_HW_Driver.h
+H:/MK/Cube/myLibs/SSD1322_OLED_library/SSD1322_OLED_lib/../SSD1322_OLED_lib/SSD1322_HW_Driver.h:
+H:/MK/Cube/myLibs/SSD1322_OLED_library/SSD1322_OLED_lib/../SSD1322_OLED_lib/SSD1322_API.h:
+H:/MK/Cube/myLibs/SSD1322_OLED_library/SSD1322_OLED_lib/../SSD1322_OLED_lib/../SSD1322_OLED_lib/SSD1322_HW_Driver.h:

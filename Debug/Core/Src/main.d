@@ -29,6 +29,12 @@ Core/Src/main.o: ../Core/Src/main.c ../Core/Inc/main.h \
  ../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_pcd_ex.h \
  ../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_pwr.h \
  ../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_pwr_ex.h \
+ ../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_rtc.h \
+ ../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_rtc_ex.h \
+ ../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_spi.h \
+ ../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_spi_ex.h \
+ ../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_tim.h \
+ ../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_tim_ex.h \
  ../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_uart.h \
  ../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_uart_ex.h \
  ../USB_DEVICE/App/usb_device.h \
@@ -42,7 +48,13 @@ Core/Src/main.o: ../Core/Src/main.c ../Core/Inc/main.h \
  ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ctlreq.h \
  H:/MK/Cube/myLibs/stm32f0perif/Inc/otherFunc.h \
  H:/MK/Cube/myLibs/stm32f0perif/Inc/uart.h \
- H:/MK/Cube/myLibs/stm32f0perif/Inc/otherFunc.h
+ H:/MK/Cube/myLibs/stm32f0perif/Inc/otherFunc.h \
+ H:/MK/Cube/myLibs/SSD1322_OLED_library/SSD1322_OLED_lib/SSD1322_HW_Driver.h \
+ H:/MK/Cube/myLibs/SSD1322_OLED_library/SSD1322_OLED_lib/SSD1322_API.h \
+ H:/MK/Cube/myLibs/SSD1322_OLED_library/SSD1322_OLED_lib/../SSD1322_OLED_lib/SSD1322_HW_Driver.h \
+ H:/MK/Cube/myLibs/SSD1322_OLED_library/SSD1322_OLED_lib/SSD1322_GFX.h \
+ H:/MK/Cube/myLibs/SSD1322_OLED_library/SSD1322_OLED_lib/Fonts/FreeMono12pt7b.h \
+ H:/MK/Cube/myLibs/SSD1322_OLED_library/SSD1322_OLED_lib/Fonts/FreeSansOblique9pt7b.h
 ../Core/Inc/main.h:
 ../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal.h:
 ../Core/Inc/stm32f0xx_hal_conf.h:
@@ -74,6 +86,12 @@ Core/Src/main.o: ../Core/Src/main.c ../Core/Inc/main.h \
 ../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_pcd_ex.h:
 ../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_pwr.h:
 ../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_pwr_ex.h:
+../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_rtc.h:
+../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_rtc_ex.h:
+../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_spi.h:
+../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_spi_ex.h:
+../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_tim.h:
+../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_tim_ex.h:
 ../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_uart.h:
 ../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_uart_ex.h:
 ../USB_DEVICE/App/usb_device.h:
@@ -88,3 +106,9 @@ Core/Src/main.o: ../Core/Src/main.c ../Core/Inc/main.h \
 H:/MK/Cube/myLibs/stm32f0perif/Inc/otherFunc.h:
 H:/MK/Cube/myLibs/stm32f0perif/Inc/uart.h:
 H:/MK/Cube/myLibs/stm32f0perif/Inc/otherFunc.h:
+H:/MK/Cube/myLibs/SSD1322_OLED_library/SSD1322_OLED_lib/SSD1322_HW_Driver.h:
+H:/MK/Cube/myLibs/SSD1322_OLED_library/SSD1322_OLED_lib/SSD1322_API.h:
+H:/MK/Cube/myLibs/SSD1322_OLED_library/SSD1322_OLED_lib/../SSD1322_OLED_lib/SSD1322_HW_Driver.h:
+H:/MK/Cube/myLibs/SSD1322_OLED_library/SSD1322_OLED_lib/SSD1322_GFX.h:
+H:/MK/Cube/myLibs/SSD1322_OLED_library/SSD1322_OLED_lib/Fonts/FreeMono12pt7b.h:
+H:/MK/Cube/myLibs/SSD1322_OLED_library/SSD1322_OLED_lib/Fonts/FreeSansOblique9pt7b.h:

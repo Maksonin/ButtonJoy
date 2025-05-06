@@ -57,14 +57,12 @@ void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef* hadc1);
 /* USER CODE END EFP */
 
 /* Private defines -----------------------------------------------------------*/
-#define Encoder0_L_Pin GPIO_PIN_0
-#define Encoder0_L_GPIO_Port GPIOC
-#define Encoder0_R_Pin GPIO_PIN_1
-#define Encoder0_R_GPIO_Port GPIOC
-#define Encoder1_L_Pin GPIO_PIN_2
-#define Encoder1_L_GPIO_Port GPIOC
-#define Encoder1_R_Pin GPIO_PIN_3
-#define Encoder1_R_GPIO_Port GPIOC
+#define SPI5_RESET_Pin GPIO_PIN_13
+#define SPI5_RESET_GPIO_Port GPIOC
+#define SPI5_DC_Pin GPIO_PIN_14
+#define SPI5_DC_GPIO_Port GPIOC
+#define SPI5_CS_Pin GPIO_PIN_15
+#define SPI5_CS_GPIO_Port GPIOC
 #define B1_Pin GPIO_PIN_0
 #define B1_GPIO_Port GPIOA
 #define Joy1_Y_Pin GPIO_PIN_1
@@ -81,26 +79,18 @@ void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef* hadc1);
 #define JoyBtn1_GPIO_Port GPIOB
 #define JoyBtn2_Pin GPIO_PIN_2
 #define JoyBtn2_GPIO_Port GPIOB
-#define JoyTUMB2_Pin GPIO_PIN_10
-#define JoyTUMB2_GPIO_Port GPIOB
-#define JoyTUMB3_Pin GPIO_PIN_11
-#define JoyTUMB3_GPIO_Port GPIOB
-#define JoyDoubleTUMB0_1_Pin GPIO_PIN_12
-#define JoyDoubleTUMB0_1_GPIO_Port GPIOB
-#define JoyDoubleTUMB0_2_Pin GPIO_PIN_13
-#define JoyDoubleTUMB0_2_GPIO_Port GPIOB
-#define JoyDoubleTUMB1_1_Pin GPIO_PIN_14
-#define JoyDoubleTUMB1_1_GPIO_Port GPIOB
-#define JoyDoubleTUMB1_2_Pin GPIO_PIN_15
-#define JoyDoubleTUMB1_2_GPIO_Port GPIOB
-#define LD3_Pin GPIO_PIN_6
-#define LD3_GPIO_Port GPIOC
-#define LD6_Pin GPIO_PIN_7
-#define LD6_GPIO_Port GPIOC
+#define Enc1_1_Pin GPIO_PIN_6
+#define Enc1_1_GPIO_Port GPIOC
+#define Enc1_2_Pin GPIO_PIN_7
+#define Enc1_2_GPIO_Port GPIOC
 #define LD4_Pin GPIO_PIN_8
 #define LD4_GPIO_Port GPIOC
 #define LD5_Pin GPIO_PIN_9
 #define LD5_GPIO_Port GPIOC
+#define Enc2_1_Pin GPIO_PIN_8
+#define Enc2_1_GPIO_Port GPIOA
+#define Enc2_2_Pin GPIO_PIN_9
+#define Enc2_2_GPIO_Port GPIOA
 #define USBF4_DM_Pin GPIO_PIN_11
 #define USBF4_DM_GPIO_Port GPIOA
 #define USBF4_DP_Pin GPIO_PIN_12
@@ -119,10 +109,6 @@ void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef* hadc1);
 #define JoyBtn6_GPIO_Port GPIOB
 #define JoyBtn7_Pin GPIO_PIN_7
 #define JoyBtn7_GPIO_Port GPIOB
-#define JoyTUMB0_Pin GPIO_PIN_8
-#define JoyTUMB0_GPIO_Port GPIOB
-#define JoyTUMB1_Pin GPIO_PIN_9
-#define JoyTUMB1_GPIO_Port GPIOB
 
 /* USER CODE BEGIN Private defines */
 #define ARRAY2ST 1
