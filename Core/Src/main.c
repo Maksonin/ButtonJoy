@@ -72,7 +72,7 @@ uint16_t adcData[17] = {0};
 
 uint8_t dmaEnd = 0;
 
-uint32_t encode = 0;
+uint32_t encode = 1;
 
 FlagStatus USBDatainReady = RESET;
 
@@ -145,7 +145,8 @@ int main(void)
   MX_RTC_Init();
   /* USER CODE BEGIN 2 */
 
-
+  uint8_t tx_buf[256 * 64 / 2];
+  SSD1322_API_init();
 
   // запуск таймеров на обработку энкодеров
   HAL_TIM_Encoder_Start(&htim1, TIM_CHANNEL_ALL);
@@ -155,12 +156,36 @@ int main(void)
   HAL_ADCEx_Calibration_Start(&hadc);
   HAL_ADC_Start_DMA(&hadc, (uint32_t *)adcData, 4);
 
+  uint8_t len = 6;
+  uint8_t buf[6] = {};
+
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   while (1)
   {
+
+		encode = __HAL_TIM_GET_COUNTER(&htim3);
+
+		//Set frame buffer size in pixels - it is used to avoid writing to memory outside frame buffer
+		//Normally it has to only be done once on initialization, but buffer size is changed near the end of while(1);.
+		set_buffer_size(256, 64);
+		// Fill buffer with zeros to clear any garbage values
+		fill_buffer(tx_buf, 0);
+
+		select_font(&FreeMono12pt7b);
+		// now text will we written with that font
+		len = 0;
+		while(encode){
+			draw_char(tx_buf, '0'+(encode % 10), 50 - (len*10), 20, 15);
+			encode /= 10;
+			len++;
+		}
+
+		// send a frame buffer to the display
+		send_buffer_to_OLED(tx_buf, 0, 0);
+
 
 	  // если по USB что-то пришло
 	  if(USBDatainReady == SET)
@@ -223,8 +248,6 @@ int main(void)
 	USB_TX_Buffer[5] = HAL_GPIO_ReadPin(JoyBtn2_GPIO_Port, JoyBtn2_Pin);
 
 	USBD_CUSTOM_HID_SendReport(&hUsbDeviceFS, USB_TX_Buffer, 6); // отправка USB пакета
-
-	encode = __HAL_TIM_GET_COUNTER(&htim3);
   }
 
     /* USER CODE END WHILE */
